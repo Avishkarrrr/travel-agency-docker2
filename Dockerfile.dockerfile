@@ -1,0 +1,11 @@
+# Use official nginx image
+FROM nginx:alpine
+
+# Remove default nginx static files
+RUN rm -rf /usr/share/nginx/html/*
+
+# Copy our website files into nginx html folder
+COPY . /usr/share/nginx/html
+
+# Nginx listens on port 80
+EXPOSE 80
